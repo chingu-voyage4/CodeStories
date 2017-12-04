@@ -7,9 +7,9 @@
 
 ## Tech stack
 
-Backend language: Node
-Database: Mongodb
-Backend Framework: Express
-Frontend: Vue
+* Backend language: Node
+* Database: Mongodb
+* Backend Framework: Express
+* Frontend: Vue
 
 
