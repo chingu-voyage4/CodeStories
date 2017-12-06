@@ -1,6 +1,4 @@
-# bears-25
-
-## Project: CodeStories
+# Team bears-25 : Project - CodeStories
 
 * A platform for coders/developers to share their story, experience, motivation, tutorials, hacks, etc along the coding journey.
 * Mockup - https://xd.adobe.com/spec/06611bd8-a40b-476e-b091-6ced92a67373/
@@ -22,9 +20,9 @@
 
 ### Branches where coding is done -
 
-* 4 basic types of branches:
+* 4 basic types of branches followed by `/small-description`:
 
-| Branch name | Purpose | Example
+| Branch type | Purpose | Example
 | ----------- | ------- | -------|
 | `bug` | Bugfixes | "bug/fixed-all-caps"
 | `feature` | for developing new features | "feature/giant-duck-modal"
