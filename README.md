@@ -14,7 +14,7 @@
 
 ## Git workflow
 
-* Based on [this](https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c) article, important points are summarized here for ease of reference.
+* Git workflow for this project is based on [this](https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c) series, important points are summarized here for ease of reference.
 
 * `master` branch - production branch - when everything is tested and works, update this branch
 * `development` branch - It is a base for all the other branches - You do not code here, you send pull requests here to be checked by other members of your team and merged. The team members have to check your code and then merge to development.
@@ -23,8 +23,9 @@
 ### Branches where coding is done -
 
 * 4 basic types of branches:
+
 | Branch name | Purpose | Example
-----------------------------------
+| ----------- | ------- | -------|
 | `bug` | Bugfixes | "bug/fixed-all-caps"
 | `feature` | for developing new features | "feature/giant-duck-modal"
 | `refactor` | code refactoring | "refactor/add-prop-types"
