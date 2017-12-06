@@ -5,9 +5,9 @@
 
 ## Tech stack
 
-* Backend language: Node
+* Backend: Node
 * Database: Mongodb
-* Backend Framework: Express
+* Middleware Framework: Express
 * Frontend: Vue
 
 ## Git workflow
