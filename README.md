@@ -46,7 +46,7 @@
 * All newly added issues and pull requests will automatically be added to the Blocks column in the Project board.
 * All reopened issues and pull requests will be added to In-progress column.
 
-#### Format for posting issues
+### Format for posting issues
 
 * The following information should be entered by the individual that report's the issue:
 
@@ -58,7 +58,7 @@
                 ----------------------
 **_Resolution:_** When the issue is resolved the Developer is responsible for describing how the issue was resolved along with any supplemental information that may be useful to other Developers if the issue should reoccur in the future:
 
-##### Issue Labelling - 
+#### Issue Labelling - 
 Follow the table given [here](https://github.com/Chingu-cohorts/pmrok/wiki/Getting-Started:-Issue-Reporting-and-Tracking#the-importance-of-labels).
 
 
