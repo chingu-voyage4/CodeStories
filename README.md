@@ -40,6 +40,19 @@
 `$ git checkout fix/my-branch`
 `$ git merge development`
 
+#### Format of posting issues
+The following information should be entered by the individual that report's the issue:
+**_Issue Description & Expected Outcome:_** Description of what occurred and what the desired outcome should have been.
+
+**_Symptoms:_** Summary of the symptoms including screenshots and logs, if available.
+
+**_Steps to Recreate:_** List of steps the Developer can follow to recreate the problem. This should include not only navigation steps, but also data values that are to be entered.
+                ----------------------
+**_Resolution:_** When the issue is resolved the Developer is responsible for describing how the issue was resolved along with any supplemental information that may be useful to other Developers if the issue should reoccur in the future:
+
+##### Issue Labelling - 
+Follow the table given [here](https://github.com/Chingu-cohorts/pmrok/wiki/Getting-Started:-Issue-Reporting-and-Tracking#the-importance-of-labels)
+
 
 
 
