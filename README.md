@@ -40,8 +40,16 @@
 `$ git checkout fix/my-branch`
 `$ git merge development`
 
-#### Format of posting issues
-The following information should be entered by the individual that report's the issue:
+### Guidelines for posting issues
+
+* Issues are the ways to check blockers in the project.
+* All newly added issues and pull requests will automatically be added to the Blocks column in the Project board.
+* All reopened issues and pull requests will be added to In-progress column.
+
+#### Format for posting issues
+
+* The following information should be entered by the individual that report's the issue:
+
 **_Issue Description & Expected Outcome:_** Description of what occurred and what the desired outcome should have been.
 
 **_Symptoms:_** Summary of the symptoms including screenshots and logs, if available.
@@ -51,7 +59,7 @@ The following information should be entered by the individual that report's the 
 **_Resolution:_** When the issue is resolved the Developer is responsible for describing how the issue was resolved along with any supplemental information that may be useful to other Developers if the issue should reoccur in the future:
 
 ##### Issue Labelling - 
-Follow the table given [here](https://github.com/Chingu-cohorts/pmrok/wiki/Getting-Started:-Issue-Reporting-and-Tracking#the-importance-of-labels)
+Follow the table given [here](https://github.com/Chingu-cohorts/pmrok/wiki/Getting-Started:-Issue-Reporting-and-Tracking#the-importance-of-labels).
 
 
 
