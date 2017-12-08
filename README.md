@@ -10,6 +10,30 @@
 * Middleware Framework: Express
 * Frontend: Vue
 
+# Client User Stories
+
+#### As a Guest User I can:
+
+* Browse through the stories list through different tabs - Hot, Newest, Most viewed, Tag labels, etc
+* I can read and share a story on Twitter, facebook, Slack and copy link to story to paste anywhere. 
+* Search for stories in the search box
+* Use advanced filter to Search by tags, author, etc
+* Create an account (signup) or signin to an existing account
+
+#### As a logged in User, I can:
+
+In addition to all the above (Guest user cases)
+* Bookmark (Save) stories to read later
+* Upvote (Kudos) stories that I like
+* Create new story
+* Edit and delete my stories
+* Create, edit and delete drafts
+* Comment on stories
+* Edit & delete my comments
+* Edit and update my profile details - Profile picture, short bio, links to other social media, portfolio, etc
+
+# Development side
+
 ## Git workflow
 
 * Git workflow for this project is based on [this](https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c) series, important points are summarized here for ease of reference.
