@@ -10,7 +10,7 @@
 * Middleware Framework: Express
 * Frontend: Vue
 
-# Client User Stories
+## Client User Stories
 
 #### As a Guest User I can:
 
@@ -32,9 +32,9 @@ In addition to all the above (Guest user cases)
 * Edit & delete my comments
 * Edit and update my profile details - Profile picture, short bio, links to other social media, portfolio, etc
 
-# Development side
+## Development side
 
-## Git workflow
+### Git workflow
 
 * Git workflow for this project is based on [this](https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c) series, important points are summarized here for ease of reference.
 
