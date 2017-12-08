@@ -14,23 +14,53 @@
 
 #### As a Guest User I can:
 
-* Browse through the stories list through different tabs - Hot, Newest, Most viewed, Tag labels, etc
-* I can read and share a story on Twitter, facebook, Slack and copy link to story to paste anywhere. 
-* Search for stories in the search box
-* Use advanced filter to Search by tags, author, etc
-* Create an account (signup) or signin to an existing account
+* See a landing page with:
+  - > Navbar containing:
+      - a button to navigate to stories page
+      - a search bar to search stories
+      - Login & signup
+  - > Few stories and a link to navigate to stories page
+  - > Footer with Links to:
+     - About page
+     - Terms / Privacy page
+     - Team
+     - Github Repo
+     - Contact (form)
+
+* Stories page where I can:
+  - > Browse through the stories list through different tabs - Hot, Newest, Most viewed, Tag labels, etc
+  - > Search for stories in the search box
+  - > Use advanced filter to Search by tags, author, etc
+* I can read and share a story on Twitter, facebook, Slack and copy link to story to paste anywhere else. 
+* View an authors' public profile consisting of
+  - > Their avatar and short bio
+  - > List of stories written by them
+* Create an account (signup) or signin to an existing account through:
+  - > Username & password
+  - > Using Google 
+  - > Github
+  - > Twitter
 
 #### As a logged in User, I can:
 
 In addition to all the above (Guest user cases)
+* Navbar button changes from Login/signup to button to create a New Post and link to go to my profile.
 * Bookmark (Save) stories to read later
-* Upvote (Kudos) stories that I like
+* Upvote (Kudos points) stories that I like
 * Create new story
 * Edit and delete my stories
 * Create, edit and delete drafts
 * Comment on stories
 * Edit & delete my comments
-* Edit and update my profile details - Profile picture, short bio, links to other social media, portfolio, etc
+* Edit and update my profile details - 
+  - > Profile picture, 
+  - > short bio, 
+  - > links to other social media, portfolio, etc 
+  - > See list of stories written by me
+  - > See list of my drafts
+  - > See my read history
+  - > See statistics of my posts
+  - > See my bookmarks
 
 ## Development side
 
