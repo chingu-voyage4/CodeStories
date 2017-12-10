@@ -115,7 +115,12 @@ In addition to all the above (Guest user cases)
 ### Issue Labelling - 
 Follow the table given [here](https://github.com/Chingu-cohorts/pmrok/wiki/Getting-Started:-Issue-Reporting-and-Tracking#the-importance-of-labels).
 
+## Team
 
+* [Pankajashree](https://github.com/pankaja-shree)
+* [Ramesh syangtan](https://github.com/rameshsyn)
+* [Ipaye Alameen](https://github.com/Ipaye)
+* [Harshil Agrawal](https://github.com/harshil1712)
 
 
 
