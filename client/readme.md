@@ -1,1 +1,0 @@
-client side using Vue js
