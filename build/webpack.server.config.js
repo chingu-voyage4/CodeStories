@@ -7,15 +7,10 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',
-  entry: './src/entry-server.js',
+  entry: ['babel-polyfill', './src/entry-server.js'],
   output: {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2'
-  },
-  resolve: {
-    alias: {
-      'create-api': './create-api-server.js'
-    }
   },
   // https://webpack.js.org/configuration/externals/#externals
   // https://github.com/liady/webpack-node-externals
