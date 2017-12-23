@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import HeaderBar from '../components/Header.vue'
+import HeaderBar from './Header.vue'
 export default {
   name: 'Home',
   components: {
@@ -40,7 +40,7 @@ h1,h3,.btn-style{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
 }
-h1{  
+h1{
   font-size: 65px;
   padding-top: 153px;
   font-weight: bold;
