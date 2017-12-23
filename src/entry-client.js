@@ -1,12 +1,9 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify';
 
 /* Promise polyfill */
 import 'es6-promise/auto';
 import './style';
 import { createApp } from './app';
-
-Vue.use(Vuetify);
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
