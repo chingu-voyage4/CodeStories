@@ -8,15 +8,18 @@
         <v-btn color="btn-bg" large class="btn-style" depressed>JOIN US!</v-btn>
       </v-container>
     </div>
+    <FooterBar></FooterBar>
   </div>
 </template>
 
 <script>
 import HeaderBar from '../components/Header.vue'
+import FooterBar from '../components/Footer.vue'
 export default {
   name: 'Home',
   components: {
-    HeaderBar
+    HeaderBar,
+    FooterBar
   },
   data () {
     return {
