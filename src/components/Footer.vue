@@ -7,15 +7,13 @@
                     <img src="~public/images/CHINGU_LOGO-07_crop.png" class="footer-logo" />
                 </v-avatar>
               </v-flex>
-              <div v-for='links in footer-links'>
-                <v-flex sm2>
+                <v-flex sm2 v-for='links in footerLinks' :key="links">
                     <v-card flat>
                         <v-card-title class="footer-link">
                             <a href="#">{{links}}</a>
                         </v-card-title>
                     </v-card>
                 </v-flex>
-              </div>
           </v-layout>
       </v-container>
       <div class="up-arrow">
@@ -28,7 +26,7 @@
 export default {
   data (){
       return {
-          footer-links:[
+          footerLinks:[
               "About",
               "Privacy",
               "Team",
