@@ -7,7 +7,7 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',
-  entry: ['babel-polyfill', './src/entry-server.js'],
+  entry: './src/entry-server.js',
   output: {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2'
