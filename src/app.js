@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
+import Vuetify from 'vuetify';
 import App from './App.vue';
 import { createStore } from './store';
 import { createRouter } from './router';
+
+Vue.use(Vuetify);
 
 // Expose a factory function that creates a fresh set of store, router,
 // app instances on each call (which is called for each SSR request)

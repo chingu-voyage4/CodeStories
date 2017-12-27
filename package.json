@@ -17,6 +17,7 @@
     "npm": ">=4.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "compression": "^1.7.1",
     "cross-env": "^5.1.1",
     "dotenv": "^4.0.0",
