@@ -9,6 +9,7 @@
       fluid
       style="min-height: 0;"
       grid-list-lg
+      class="text-xs-center"
     >
       <v-layout row wrap>
         <v-flex xs12 sm6 offset-sm3>
