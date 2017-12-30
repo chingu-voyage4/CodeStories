@@ -26,7 +26,14 @@
              type="password"
             ></v-text-field>
                 <v-btn block color="btn-bg" class="btn-style">Login</v-btn>
-
+            <v-layout row class="mt-4 pa-3 borderTop grey--text">
+              <v-flex sm6 class="text-xs-left">
+                Forgot Password?
+              </v-flex>
+              <v-flex sm6 class="text-xs-right">
+                Sign up here
+              </v-flex>
+            </v-layout>
             </v-card>
           </v-flex>
         </v-layout>
@@ -81,5 +88,8 @@ box-shadow: 20px 20px 5px 5px rgba(95,212,138,0.5);
 }
 .green-border {
   border: 3px solid #5FD48A;
+}
+.borderTop {
+  border-top: 1px solid #95989A;
 }
 </style>
