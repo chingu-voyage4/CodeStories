@@ -14,13 +14,13 @@
            <v-form v-model="valid">
     <v-text-field
       label="E-mail"
-      v-model="email"
-      :rules="emailRules"
+      v-model="user.email"
+      type="email"
       required
     ></v-text-field>
      <v-text-field
       label="Password"
-      v-model="password"
+      v-model="user.password"
       type="password"
       required
     ></v-text-field>
@@ -53,6 +53,10 @@ export default {
   name: 'Login',
   data () {
     return {
+      user: {
+        email: '',
+        password: ''
+      },
       error: {
           message: ''
         }
