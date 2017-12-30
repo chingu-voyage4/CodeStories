@@ -15,6 +15,16 @@
                  <br>
                 <hr>
                 <br>
+                <v-text-field
+              label="Your Email"
+              type="email"
+            ></v-text-field>
+                <v-text-field
+              label="Password"
+              hint="At least 8 characters"
+              min="8"
+             type="password"
+            ></v-text-field>
                 <v-btn block color="btn-bg" class="btn-style">Login</v-btn>
 
             </v-card>
