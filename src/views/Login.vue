@@ -13,7 +13,20 @@
     >
       <v-layout row wrap>
         <v-flex xs12 sm6 offset-sm3>
-           <v-form v-model="valid">
+          <v-btn block>
+      Login with Gmail
+    </v-btn>
+    <v-btn block>
+      Login with Github
+    </v-btn>
+    <v-btn block>
+      Login with Twitter
+    </v-btn>
+    <v-btn block>
+      Login with Facebook
+    </v-btn>
+    <v-divider inset></v-divider>
+    <v-form>
     <v-text-field
       label="E-mail"
       v-model="user.email"
