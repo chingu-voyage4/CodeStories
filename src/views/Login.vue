@@ -15,7 +15,7 @@
                  <br>
                 <hr>
                 <br>
-                <v-btn block outline color="green">Login</v-btn>
+                <v-btn block color="btn-bg" class="btn-style">Login</v-btn>
 
             </v-card>
           </v-flex>
@@ -62,8 +62,7 @@ h3{
 }
 .btn-style{
   font-weight: bold;
-  color: #395F5C;
-  margin-top: 50px;
+  font-size: 1.5em;
 }
 .green-shadow {
   -webkit-box-shadow: 20px 20px 5px 5px rgba(95,212,138,0.5);
