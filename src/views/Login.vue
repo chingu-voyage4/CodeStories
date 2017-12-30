@@ -2,7 +2,7 @@
       <v-container fluid fill-height>
         <v-layout justify-center align-center>
           <v-flex xs12 sm6>
-            <v-card class="pa-3">
+            <v-card class="pa-3 green-border green-shadow">
               <v-flex class="text-xs-center">
                     <v-avatar size="125px">
                         <img class='logo' src="~public/images/CHINGU_LOGO-04.png" alt="CodeStories logo" align="middle" />
@@ -64,5 +64,13 @@ h3{
   font-weight: bold;
   color: #395F5C;
   margin-top: 50px;
+}
+.green-shadow {
+  -webkit-box-shadow: 20px 20px 5px 5px rgba(95,212,138,0.5);
+-moz-box-shadow: 20px 20px 5px 5px rgba(95,212,138,0.5);
+box-shadow: 20px 20px 5px 5px rgba(95,212,138,0.5);
+}
+.green-border {
+  border: 3px solid #5FD48A;
 }
 </style>
