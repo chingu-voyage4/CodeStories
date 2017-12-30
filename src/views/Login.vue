@@ -42,18 +42,6 @@
     <v-btn block>
       Login
     </v-btn>
-    <v-btn block>
-      Login with Gmail
-    </v-btn>
-    <v-btn block>
-      Login with Github
-    </v-btn>
-    <v-btn block>
-      Login with Twitter
-    </v-btn>
-    <v-btn block>
-      Login with Facebook
-    </v-btn>
   </v-form>
         </v-flex>
       </v-layout>
