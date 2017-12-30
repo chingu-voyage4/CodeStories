@@ -12,9 +12,15 @@
                 <v-btn block outline>Login with Github</v-btn>
                 <v-btn block outline color="indigo">Login with Facebook</v-btn>
                  <v-btn block outline color="blue">Login with Twitter</v-btn>
-                 <br>
-                <hr>
-                <br>
+              <v-layout row class="mt-4 py-3">
+              <v-flex sm5 class="middle-line">
+              </v-flex>
+              <v-flex sm2 class="text-xs-center">
+                OR
+              </v-flex>
+              <v-flex sm5 class="middle-line">
+              </v-flex>
+            </v-layout>
                 <v-text-field
               label="Your Email"
               type="email"
@@ -91,5 +97,9 @@ box-shadow: 20px 20px 5px 5px rgba(95,212,138,0.5);
 }
 .borderTop {
   border-top: 1px solid #95989A;
+}
+.middle-line {
+  border-top: 1px solid #757575;
+  margin-top: 10px;
 }
 </style>
