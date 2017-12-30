@@ -12,7 +12,7 @@
         <v-flex sm4>
             <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat large left>Login</v-btn>
+                <v-btn class="header-link" flat large left href="/login">Login</v-btn>
                 <v-btn flat large left>Join</v-btn>
             </v-toolbar-items>
         </v-flex>
@@ -40,6 +40,10 @@ export default {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .logo{
-    margin-top: 75px;    
+    margin-top: 75px;
+}
+.header-link {
+    color: #5FD48A;
+    text-decoration: none;
 }
 </style>
