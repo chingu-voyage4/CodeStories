@@ -1,9 +1,10 @@
 <template>
 <v-container>
-    <v-toolbar color="green">
-      <v-toolbar-title class="white--text">Login</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
+   <v-flex xs12 sm6 offset-sm3 class="text-xs-center">
+            <v-avatar size="125px">
+                <img class='logo' src="~public/images/CHINGU_LOGO-04.png" alt="CodeStories logo" align="middle" />
+            </v-avatar>
+        </v-flex>
     <v-container
       fluid
       style="min-height: 0;"
