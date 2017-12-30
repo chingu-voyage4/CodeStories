@@ -50,7 +50,7 @@
 </template>
 
 <script>
-//import {firebaseConfig} from '../util/firebaseConfig'
+import {firebaseConfig} from '../util/firebaseConfig'
 
 export default {
   name: 'Login',
