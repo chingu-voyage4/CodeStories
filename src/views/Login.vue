@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <v-toolbar color="pink">
+    <v-toolbar color="green">
       <v-toolbar-title class="white--text">Login</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -10,7 +10,7 @@
       grid-list-lg
     >
       <v-layout row wrap>
-        <v-flex xs12>
+        <v-flex xs12 sm6 offset-sm3>
            <v-form v-model="valid">
     <v-text-field
       label="E-mail"
@@ -24,59 +24,22 @@
       type="password"
       required
     ></v-text-field>
+    <v-btn block>
+      Login
+    </v-btn>
+    <v-btn block>
+      Login with Gmail
+    </v-btn>
+    <v-btn block>
+      Login with Github
+    </v-btn>
+    <v-btn block>
+      Login with Twitter
+    </v-btn>
+    <v-btn block>
+      Login with Facebook
+    </v-btn>
   </v-form>
-        </v-flex>
-        <v-flex xs12>
-          <v-card color="cyan darken-2" class="white--text">
-            <v-container fluid grid-list-lg>
-              <v-layout row>
-                <v-flex xs7>
-                  <div>
-                    Login with Gmail
-                  </div>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card>
-        </v-flex>
-        <v-flex xs12>
-          <v-card color="purple" class="white--text">
-            <v-container fluid grid-list-lg>
-              <v-layout row>
-                <v-flex xs7>
-                  <div>
-                   Login with Github
-                  </div>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card>
-        </v-flex>
-        <v-flex xs12>
-          <v-card color="purple" class="white--text">
-            <v-container fluid grid-list-lg>
-              <v-layout row>
-                <v-flex xs7>
-                  <div>
-                   Login with Twitter
-                  </div>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card>
-        </v-flex>
-        <v-flex xs12>
-          <v-card color="purple" class="white--text">
-            <v-container fluid grid-list-lg>
-              <v-layout row>
-                <v-flex xs7>
-                  <div>
-                   Login with Facebook
-                  </div>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card>
         </v-flex>
       </v-layout>
     </v-container>
