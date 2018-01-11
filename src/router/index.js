@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Test from '../components/Test/Test.vue';
-import Login from '../views/Login.vue';
-import Home from '../views/Home.vue';
+import routes from './routes';
 
 Vue.use(Router);
 
@@ -11,10 +9,6 @@ export function createRouter () {
     mode: 'history',
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
-    routes: [
-      { path: '/', component: Test },
-      { path: '/home', component: Home},
-      { path: '/login', component: Login}
-    ]
+    routes
   });
 }

@@ -4,6 +4,7 @@ import Vuetify from 'vuetify';
 import App from './App.vue';
 import { createStore } from './store';
 import { createRouter } from './router';
+import routeGuard from './router/routeGuard';
 
 Vue.use(Vuetify);
 
@@ -13,6 +14,8 @@ export function createApp () {
   // create store and router instances
   const store = createStore();
   const router = createRouter();
+
+  router.beforeEach(routeGuard(store));
 
   // sync the router with the vuex store.
   // this registers `store.state.route`
