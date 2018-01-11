@@ -32,32 +32,34 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.bg-img{
+.bg-img {
   background-image: url('~public/images/home_bg.jpg');
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 576px;
   display: block;
 }
-h1,h3,.btn-style{
+h1,
+h3,
+.btn-style {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
 }
-h1{
+h1 {
   font-size: 65px;
   padding-top: 153px;
   font-weight: bold;
 }
-h3{
+h3 {
   font-size: 22.5px;
   font-weight: normal;
 }
-.btn-bg{
-  background: #5FD48A;
+.btn-bg {
+  background: #5fd48a;
 }
-.btn-style{
+.btn-style {
   font-weight: bold;
-  color: #395F5C;
+  color: #395f5c;
   margin-top: 50px;
 }
 </style>
