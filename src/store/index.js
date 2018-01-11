@@ -9,7 +9,8 @@ Vue.use(Vuex);
 export function createStore () {
   return new Vuex.Store({
     state: {
-      message: 'Codestories'
+      message: 'Codestories',
+      user: null
     },
     actions,
     mutations,

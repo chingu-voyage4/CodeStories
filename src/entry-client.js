@@ -5,6 +5,13 @@ import Vue from 'vue';
 import 'es6-promise/auto';
 import './style';
 import { createApp } from './app';
+import { auth } from './firebase';
+import authObserver from './firebase/authObserver';
+
+const { app, router, store } = createApp();
+
+// Listen to auth state change
+authObserver(auth, store);
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
@@ -21,7 +28,6 @@ Vue.mixin({
   }
 });
 
-const { app, router, store } = createApp();
 
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.
