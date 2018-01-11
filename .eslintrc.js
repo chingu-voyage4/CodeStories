@@ -6,7 +6,9 @@ module.exports = {
     "space-before-function-paren": "off",
     "import/prefer-default-export": "off",
     "no-underscore-dangle": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "quotes": "off",
+    "arrow-parens": "off"
   },
   "env": {
     "node": true,
