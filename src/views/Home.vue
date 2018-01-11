@@ -5,7 +5,9 @@
       <v-container class="text-xs-center">
         <h1>{{title}}</h1>
         <h3>{{subtitle}}</h3>
-        <v-btn color="btn-bg" large class="btn-style" depressed>JOIN US!</v-btn>
+        <router-link to="/register">
+          <v-btn color="btn-bg" large class="btn-style" depressed> JOIN US! </v-btn>
+        </router-link>
       </v-container>
     </div>
     <FooterBar></FooterBar>

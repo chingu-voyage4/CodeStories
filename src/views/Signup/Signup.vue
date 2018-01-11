@@ -4,9 +4,11 @@
       <v-flex xs12 sm6>
         <v-card class="pa-3 green-border green-shadow">
           <v-flex class="text-xs-center">
-            <v-avatar size="125px">
-              <img class='logo' src="~public/images/CHINGU_LOGO-04.png" alt="CodeStories logo" align="middle" />
-            </v-avatar>
+            <router-link to="/">
+              <v-avatar size="125px">
+                <img class='logo' src="~public/images/CHINGU_LOGO-04.png" alt="CodeStories logo" align="middle" />
+              </v-avatar>
+            </router-link>
             </v-flex>
             <v-btn block outline color="teal">Signup with Google</v-btn>
             <v-btn block outline>Signup with Github</v-btn>
