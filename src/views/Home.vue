@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import HeaderBar from '../components/Header.vue'
+import HeaderBar from '../components/Header/Header.vue'
 import FooterBar from '../components/Footer.vue'
 export default {
   name: 'Home',
@@ -57,7 +57,7 @@ h3 {
   font-weight: normal;
 }
 .btn-bg {
-  background: #5fd48a;
+  background: #5fd48a !important;
 }
 .btn-style {
   font-weight: bold;
