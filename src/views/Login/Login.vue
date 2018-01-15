@@ -10,9 +10,15 @@
               </v-avatar>
             </router-link>
             </v-flex>
-            <v-btn block outline color="teal">Login with Google</v-btn>
-            <v-btn block outline>Login with Github</v-btn>
-            <v-btn block outline color="blue">Login with Twitter</v-btn>
+            <v-btn block outline color="teal" @click="signInWithAuth('google')">
+              <v-icon>fa-google</v-icon>&nbsp;Login with Google
+            </v-btn>
+            <v-btn block outline @click="signInWithAuth('github')">
+              <v-icon>fa-github</v-icon>&nbsp;Login with Github
+            </v-btn>
+            <v-btn block outline color="blue" @click="signInWithAuth('twitter')">
+              <v-icon>fa-twitter</v-icon>&nbsp;Login with Twitter
+            </v-btn>
           <v-layout row class="mt-4 py-3">
           <v-flex sm5 class="middle-line">
           </v-flex>
@@ -77,7 +83,7 @@ h3{
   font-weight: normal;
 }
 .btn-bg{
-  background: #5FD48A;
+  background: #5FD48A !important;
 }
 .btn-style{
   font-weight: bold;

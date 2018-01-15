@@ -1,13 +1,12 @@
-import { auth, db } from '../../firebase';
-import userSchema from '../../schema/user';
+import register from '../../firebase/signup';
 
 export default {
   name: 'Login',
-  props: ['returnTo'],
   data () {
     return {
       user: {
-        username: '',
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -19,35 +18,39 @@ export default {
     };
   },
   methods: {
-    async handleRegister () {
-      const { username, email, password } = this.user;
+    async handleRegisterWithEmailAndPassword () {
       this.loading = true;
-
       try {
-        // Send register request
-        const user = await auth.createUserWithEmailAndPassword(email, password);
-        const { uid } = user;
+        const res = await register('local', this.user);
+        this.loading = false;
+        console.log(res);
 
-        // Update username as display name
-        await user.updateProfile({ displayName: username });
-
-        // Get user ref
-        const userRef = db.ref(`users/${uid}`);
-
-        // Create a user
-        await userRef.set({
-          ...userSchema,
-          uid,
-          username
-        });
-
-        // Redirect to home
+        // Redirect
         this.$router.push('/');
+      } catch (e) {
+        console.error(e);
+        this.loading = false;
+        if (e.code) {
+          this.error.message = e.message;
+        } else {
+          this.error.message = "Something went wrong !";
+        }
+      }
+    },
+    async signUpWithProv (provider) {
+      try {
+        const res = await register(provider);
+        console.log(res);
 
-        this.loading = false;
-      } catch (err) {
-        this.loading = false;
-        this.error.message = err.message;
+        // Redirect
+        this.$router.push('/');
+      } catch (e) {
+        console.error(e);
+        if (e.code) {
+          window.alert(e.message);
+        } else {
+          window.alert("Something Went wrong");
+        }
       }
     }
   }

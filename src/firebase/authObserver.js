@@ -13,4 +13,5 @@ export default (auth, store) => {
       store.commit('setLoggedInUser', null);
     }
   });
+  window.auth = auth;
 };

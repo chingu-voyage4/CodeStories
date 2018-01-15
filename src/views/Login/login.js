@@ -1,4 +1,4 @@
-import { auth } from '../../firebase';
+import login from '../../firebase/login';
 
 export default {
   name: 'Login',
@@ -16,20 +16,39 @@ export default {
     };
   },
   methods: {
-    async handleLogin () {
-      const { email, password } = this.user;
+    async handleEmailAndPasswordSignIn () {
       this.loading = true;
 
       try {
         // Send sign in request
-        await auth.signInWithEmailAndPassword(email, password);
+        await login('local', this.user);
         this.loading = false;
 
         // Redirect to previous location if there is one otherwise to homepage.
         this.$router.push(this.returnTo ? this.returnTo : '/');
-      } catch (err) {
+      } catch (e) {
         this.loading = false;
-        this.error.message = err.message;
+        if (e.code) {
+          this.error.message = e.message;
+        } else {
+          this.error.message = "Something went wrong !";
+        }
+
+      }
+    },
+    async signInWithAuth (provider) {
+      try {
+        const res = await login(provider);
+        console.log(res);
+
+        // Redirect to previous location if there is one otherwise to homepage.
+        this.$router.push(this.returnTo ? this.returnTo : '/');
+      } catch (e) {
+        if (e.code) {
+          window.alert(e.message);
+        } else {
+          window.alert('Something went wrong !');
+        }
       }
     }
   }
