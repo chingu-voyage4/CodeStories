@@ -19,7 +19,8 @@ const publicRoutes = [
 
     // Spread route query as props
     props: (route) => ({ ...route.query })
-  }
+  },
+  { path: '/stories', component: Stories }
 ];
 
 export default [
