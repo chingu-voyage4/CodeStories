@@ -1,72 +1,35 @@
 <template>
-  <div class="content">
-    <HeaderBar></HeaderBar>
-    <div class="bg-img">
-      <v-container class="text-xs-center">
-        <h1>{{title}}</h1>
-        <h3>{{subtitle}}</h3>
-        <router-link to="/register" v-if="!user">
-          <v-btn color="btn-bg" large class="btn-style" depressed> JOIN US! </v-btn>
-        </router-link>
-        <router-link to="/stories" v-else>
-          <v-btn color="btn-bg" large class="btn-style" depressed> DISCOVER STORIES! </v-btn>
-        </router-link>
-      </v-container>
-    </div>
-    <FooterBar></FooterBar>
-  </div>
+      <v-card>
+        <v-card-media
+          :src="story.image"
+          height="200px"
+        >
+        </v-card-media>
+        <v-card-title primary-title>
+          <div>
+            <div>
+              <span class="headline">Story title</span>
+              <span class="text-xs-right">Date</span>
+            </div>
+            <span class="grey--text">by Author</span>
+          </div>
+        </v-card-title>
+          <v-card-text>
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+          <v-card-actions>
+          <v-btn flat>Share</v-btn>
+          <v-btn flat color="purple">Explore</v-btn>
+        </v-card-actions>
+      </v-card>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import HeaderBar from '../components/Header/Header.vue'
-import FooterBar from '../components/Footer.vue'
-export default {
-  name: 'Home',
-  components: {
-    HeaderBar,
-    FooterBar
-  },
-  data () {
-    return {
-      title: 'Coders of the World',
-      subtitle: 'Story snippets from people learning to code around the world'
-    }
-  },
-  computed: mapGetters(["user"]),
-}
+  export default {
+    data: () => ({
+      story: {
+        image: '#'
+      }
+    })
+  }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.bg-img {
-  background-image: url('~public/images/home_bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 576px;
-  display: block;
-}
-h1,
-h3,
-.btn-style {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-}
-h1 {
-  font-size: 65px;
-  padding-top: 153px;
-  font-weight: bold;
-}
-h3 {
-  font-size: 22.5px;
-  font-weight: normal;
-}
-.btn-bg {
-  background: #5fd48a !important;
-}
-.btn-style {
-  font-weight: bold;
-  color: #395f5c;
-  margin-top: 50px;
-}
-</style>
