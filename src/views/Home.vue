@@ -5,8 +5,11 @@
       <v-container class="text-xs-center">
         <h1>{{title}}</h1>
         <h3>{{subtitle}}</h3>
-        <router-link to="/register">
+        <router-link to="/register" v-if="!user">
           <v-btn color="btn-bg" large class="btn-style" depressed> JOIN US! </v-btn>
+        </router-link>
+        <router-link to="/stories" v-else>
+          <v-btn color="btn-bg" large class="btn-style" depressed> DISCOVER STORIES! </v-btn>
         </router-link>
       </v-container>
     </div>
@@ -15,6 +18,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import HeaderBar from '../components/Header/Header.vue'
 import FooterBar from '../components/Footer.vue'
 export default {
@@ -28,7 +32,8 @@ export default {
       title: 'Coders of the World',
       subtitle: 'Story snippets from people learning to code around the world'
     }
-  }
+  },
+  computed: mapGetters(["user"]),
 }
 </script>
 
