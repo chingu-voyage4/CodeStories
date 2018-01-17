@@ -4,7 +4,7 @@ import afterSignup from './afterSignup';
 
 const getResult = (provider, credential) => {
   if (provider === 'local') {
-    return auth.signInWithEmailAndPassword(credential);
+    return auth.signInWithEmailAndPassword(credential.email, credential.password);
   }
   return loginProvider(provider);
 };
