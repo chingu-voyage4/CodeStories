@@ -29,7 +29,7 @@
           </v-flex>
         </v-layout>
 
-         <form @submit.prevent="handleLogin">
+         <form @submit.prevent="handleEmailAndPasswordSignIn">
             <span style="color: red;">{{ error.message }}</span>
             <br /><br/>
             <v-text-field
