@@ -2,6 +2,7 @@ import Test from '../components/Test/Test.vue';
 import Login from '../views/Login/Login.vue';
 import Home from '../views/Home.vue';
 import Signup from '../views/Signup/Signup.vue';
+import StoryPage from '../views/Stories Page/storiesPage.vue'
 
 /* Protected routes */
 const protectedRoutes = [
@@ -13,6 +14,7 @@ const publicRoutes = [
   { path: '/', component: Home },
   { path: '/home', component: Home },
   { path: '/register', component: Signup },
+  {path: '/storyPage', component: StoryPage},
   {
     path: '/login',
     component: Login,
