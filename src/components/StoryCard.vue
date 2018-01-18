@@ -23,7 +23,8 @@
   export default {
     data: () => ({
       story: {
-        image: '#'
+        image: '#',
+        tags: ['tag1', 'tag2', 'tag3']
       }
     })
   }
