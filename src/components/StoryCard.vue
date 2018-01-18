@@ -1,5 +1,5 @@
 <template>
-      <v-card>
+      <v-card class="elevation-2">
         <v-card-media
           :src="story.image"
           height="200px"
