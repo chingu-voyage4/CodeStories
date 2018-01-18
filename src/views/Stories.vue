@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <HeaderBar></HeaderBar>
-    <story-card />
+    <StoryGrid />
     <FooterBar></FooterBar>
   </div>
 </template>
@@ -10,13 +10,14 @@
 import { mapGetters } from "vuex";
 import HeaderBar from '../components/Header/Header.vue'
 import FooterBar from '../components/Footer.vue'
-import StoryCard from '../components/StoryCard.vue'
+import StoryGrid from '../components/StoryGrid.vue'
+
 export default {
   name: 'Stories',
   components: {
     HeaderBar,
     FooterBar,
-    StoryCard
+    StoryGrid
   },
   data () {
     return {
@@ -31,9 +32,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .bg-img {
-  background-image: url('~public/images/home_bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 576px;
   display: block;
 }
