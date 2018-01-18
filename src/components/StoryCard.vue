@@ -14,6 +14,17 @@
           </v-card-text>
           <v-card-actions>
             <v-chip label color="white" text-color="grey" v-for="tag in story.tags" :key="tag.id">{{tag}}</v-chip>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+                  <v-icon color="grey">favorite</v-icon>
+                </v-btn>
+                <v-btn icon>
+                  <v-icon color="grey">bookmark</v-icon>
+                </v-btn>
+                <v-btn icon>
+                  <v-icon color="grey">share</v-icon>
+                </v-btn>
+              </v-card-actions>
         </v-card-actions>
       </v-card>
 </template>
