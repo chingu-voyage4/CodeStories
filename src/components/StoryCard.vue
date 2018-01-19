@@ -6,7 +6,7 @@
         >
         </v-card-media>
         <v-card-title primary-title>
-              <span class="headline">Kangaroo Valley Safari</span><v-spacer></v-spacer> <span class="grey--text">Date</span>
+              <span class="headline storytitle">Kangaroo Valley Safari</span><v-spacer></v-spacer> <span class="grey--text">Date</span>
         </v-card-title>
           <v-card-text>
             <p class="grey--text">by Author</p>
@@ -35,3 +35,11 @@
     })
   }
 </script>
+
+<style scoped>
+.storytitle {
+  color: #757575;
+  font-weight: bold;
+}
+</style>
+
