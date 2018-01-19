@@ -1,9 +1,9 @@
 <template>
-<v-container fluid>
-<v-layout>
-  <v-flex xs4 v-for="i in 5" :key="i">
+<v-container grid-list-md>
+<v-layout wrap>
+  <v-flex xs4 v-for="i in 6" :key="i">
         <story-card></story-card>
-      </v-flex>
+  </v-flex>
 </v-layout>
 </v-container>
 </template>
