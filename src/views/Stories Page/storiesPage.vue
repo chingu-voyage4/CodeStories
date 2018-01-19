@@ -47,6 +47,32 @@
                     </v-layout>
                 </v-container>
             </v-container>
+            <div class="comment-wrapper">
+                <v-container>
+                    <v-layout row>
+                        <v-flex md2>
+                        </v-flex>
+                        <v-flex md8 class="text-xs-left">
+                            <v-layout row>
+                                <v-flex md1>
+                                    <v-avatar class="grey lighten-4">
+                                        <img src="http://via.placeholder.com/30x30" alt="avatar">
+                                    </v-avatar>
+                                </v-flex>
+                                <v-flex md2>
+                                <h2>{{userName}}</h2>
+                                </v-flex>
+                            </v-layout>
+                            <v-text-field
+                                name="input-1"
+                                label="Label Text"
+                                textarea
+                            ></v-text-field>
+                            <v-btn @click="submit" color="btn-bg" class="btn-style">Submit</v-btn>
+                        </v-flex>
+                    </v-layout> 
+                </v-container>
+            </div>
             <FooterBar></FooterBar>
         </div>
     </v-app>
@@ -66,7 +92,8 @@ export default {
       storyTitle: 'Loreum Ipsum',
       author: 'Author',
       date:'01 Jan 2018',
-      kudosCount: 256
+      kudosCount: 256,
+      userName: 'John Doe'
     }
   }
 }
@@ -80,7 +107,7 @@ export default {
   height: 400px;
   display: block;
 }
-h1,.date,p{
+h1,.date,p,h2{
     color: #757575;
 }
 h3{
@@ -97,6 +124,16 @@ h3{
 .kudos{
     font-weight: bold;
     font-size: 16px;
+}
+.comment-wrapper{
+    background: #F1F9F4;
+}
+.btn-bg {
+  background: #5fd48a !important;
+}
+.btn-style {
+  font-weight: bold;
+  color: #395f5c;
 }
 </style>
 
