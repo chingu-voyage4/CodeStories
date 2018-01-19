@@ -81,6 +81,6 @@ h3 {
   margin-top: 50px;
 }
 .neg-margin-top {
-  margin-top: -8%;
+  margin-top: -10%;
 }
 </style>
