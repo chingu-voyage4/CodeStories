@@ -1,9 +1,9 @@
 <template>
-  <div class="content">
+  <v-app>
     <HeaderBar></HeaderBar>
     <StoryGrid />
     <FooterBar></FooterBar>
-  </div>
+  </v-app>
 </template>
 
 <script>
