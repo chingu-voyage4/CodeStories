@@ -2,7 +2,7 @@
       <v-card class="elevation-2">
         <v-card-media
           :src="story.image"
-          height="200px"
+          height="300px"
         >
         </v-card-media>
         <v-card-title primary-title>
@@ -33,7 +33,7 @@
   export default {
     data: () => ({
       story: {
-        image: '#',
+        image: 'http://via.placeholder.com/200x200',
         tags: ['tag1', 'tag2', 'tag3']
       }
     })
