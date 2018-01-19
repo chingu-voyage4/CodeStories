@@ -16,9 +16,9 @@
     <div class="neg-margin-top">
     <story-grid />
     </div>
-    <v-flex class="text-xs-center ma-3">
+    <v-flex class="text-xs-center mb-5">
     <router-link to="/stories">
-        <v-btn color="btn-bg" large class="btn-style" depressed> DISCOVER STORIES! </v-btn>
+        <v-btn color="btn-bg" large class="btn-style" depressed> DISCOVER MORE </v-btn>
         </router-link>
     </v-flex>
     <FooterBar></FooterBar>
