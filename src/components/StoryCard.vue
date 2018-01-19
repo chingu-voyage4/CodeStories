@@ -1,5 +1,5 @@
 <template>
-      <v-card class="elevation-2">
+      <v-card class="elevation-2" ripple>
         <v-card-media
           :src="story.image"
           height="300px"
