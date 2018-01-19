@@ -16,16 +16,12 @@
             <v-chip label v-for="tag in story.tags" :key="tag.id">{{tag}}</v-chip>
             <v-spacer></v-spacer>
             <v-btn icon>
-                  <v-icon color="grey">favorite_border</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon color="grey">bookmark_border</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon color="grey">share</v-icon>
-                </v-btn>
-              </v-card-actions>
-        </v-card-actions>
+                <v-icon color="grey">bookmark_border</v-icon>
+            </v-btn>
+            <v-btn icon>
+                <v-icon color="grey">share</v-icon>
+            </v-btn>
+          </v-card-actions>
       </v-card>
 </template>
 
