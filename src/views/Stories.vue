@@ -3,6 +3,16 @@
     <HeaderBar></HeaderBar>
      <v-container class="text-xs-center">
         <h1>{{pageTitle}}</h1>
+        <v-form>
+          <v-layout row wrap>
+            <v-flex xs6>
+              <v-text-field v-model="searchText" placeholder="SEARCH BY TITLE, AUTHOR OR TAG"></v-text-field>
+            </v-flex>
+            <v-flex xs6>
+              <v-btn large @click="submit" class="btn-bg btn-style">SEARCH</v-btn>
+            </v-flex>
+          </v-layout>
+        </v-form>
      </v-container>
     <StoryGrid />
     <FooterBar></FooterBar>
@@ -24,7 +34,8 @@ export default {
   },
   data () {
     return {
-      pageTitle: 'Discover More Stories'
+      pageTitle: 'Discover More Stories',
+      searchText: ''
     }
   },
   computed: mapGetters(["user"]),
