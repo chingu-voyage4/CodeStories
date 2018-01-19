@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <HeaderBar></HeaderBar>
+     <v-container class="text-xs-center">
+        <h1>{{pageTitle}}</h1>
+     </v-container>
     <StoryGrid />
     <FooterBar></FooterBar>
   </v-app>
@@ -21,8 +24,7 @@ export default {
   },
   data () {
     return {
-      title: 'Coders of the World',
-      subtitle: 'Story snippets from people learning to code around the world'
+      pageTitle: 'Discover More Stories'
     }
   },
   computed: mapGetters(["user"]),
@@ -31,20 +33,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.bg-img {
-  height: 576px;
-  display: block;
-}
-h1,
-h3,
 .btn-style {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
 }
 h1 {
-  font-size: 65px;
+  font-size: 40px;
   padding-top: 153px;
   font-weight: bold;
+  color: #757575;
 }
 h3 {
   font-size: 22.5px;
