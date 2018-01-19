@@ -1,5 +1,5 @@
 <template>
-<v-container grid-list-md>
+<v-container grid-list-lg>
 <v-layout wrap>
   <v-flex xs4 v-for="i in 6" :key="i">
         <story-card></story-card>
