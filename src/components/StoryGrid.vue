@@ -1,7 +1,7 @@
 <template>
 <v-container grid-list-lg>
 <v-layout wrap>
-  <v-flex xs6 v-for="i in 6" :key="i">
+  <v-flex sm6 v-for="i in 6" :key="i">
         <story-card></story-card>
   </v-flex>
 </v-layout>
