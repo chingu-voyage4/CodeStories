@@ -88,4 +88,14 @@ h3 {
 .tags{
   color: #757575;
 }
+.tag-links {
+  text-decoration: underline;
+}
+.links {
+  color: #757575;
+  text-transform: uppercase;
+}
+.links:hover, .links:active {
+  color: #5FD48A
+}
 </style>
