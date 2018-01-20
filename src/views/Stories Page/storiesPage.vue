@@ -66,7 +66,7 @@
                             </v-layout>
                             <v-text-field
                                 name="input-1"
-                                label="Label Text"
+                                label="Comment..."
                                 textarea
                             ></v-text-field>
                             <v-btn @click="submit" color="btn-bg" class="btn-style">Submit</v-btn>
