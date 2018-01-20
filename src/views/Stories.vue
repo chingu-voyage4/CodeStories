@@ -9,7 +9,7 @@
               <v-text-field v-model="searchText" placeholder="SEARCH BY TITLE, AUTHOR OR TAG"></v-text-field>
             </v-flex>
             <v-flex xs6>
-              <v-btn large @click="submit" class="btn-bg btn-style">SEARCH</v-btn>
+              <v-btn large @click="submit" class="btn-bg btn-style white--text">SEARCH</v-btn>
             </v-flex>
           </v-layout>
         </v-form>
