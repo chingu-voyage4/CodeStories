@@ -33,23 +33,8 @@
               absolute
               right
             >
-      <v-list class="pa-1">
-        <v-list-tile>
-            <h3>Advanced Filter</h3>
-        </v-list-tile>
-      </v-list>
-      <v-list class="pt-0" dense>
-        <v-divider></v-divider>
-        <v-list-tile v-for="item in items" :key="item.title" @click="">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+            <filter-drawer />
+            </v-navigation-drawer>
          </v-flex>
        </v-layout>
      </v-container>
@@ -63,13 +48,15 @@ import { mapGetters } from "vuex";
 import HeaderBar from '../components/Header/Header.vue'
 import FooterBar from '../components/Footer.vue'
 import StoryGrid from '../components/StoryGrid.vue'
+import FilterDrawer from '../components/FilterDrawer.vue'
 
 export default {
   name: 'Stories',
   components: {
     HeaderBar,
     FooterBar,
-    StoryGrid
+    StoryGrid,
+    FilterDrawer
   },
   data () {
     return {
@@ -78,10 +65,6 @@ export default {
       top_tags: ['Origin story', 'Inspiration', 'Life'],
       story_categories: ['HOT', 'NEWEST', 'MOST', 'VIEWED', 'BOOKMARKED'],
       drawer: null,
-        items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' }
-        ]
     }
   },
   computed: mapGetters(["user"]),
