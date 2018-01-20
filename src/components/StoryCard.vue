@@ -15,9 +15,22 @@
           <v-card-actions>
             <v-chip label v-for="tag in story.tags" :key="tag.id">{{tag}}</v-chip>
             <v-spacer></v-spacer>
-            <v-btn icon>
+            <v-menu bottom>
+            <v-btn icon slot="activator">
                 <v-icon color="grey">share</v-icon>
             </v-btn>
+                <v-list>
+                  <v-list-tile @click="">
+                    <v-list-tile-title>Share on Facebook</v-list-tile-title>
+                  </v-list-tile>
+                  <v-list-tile @click="">
+                    <v-list-tile-title>Share on Twitter</v-list-tile-title>
+                  </v-list-tile>
+                  <v-list-tile @click="">
+                    <v-list-tile-title>Copy URL</v-list-tile-title>
+                  </v-list-tile>
+                </v-list>
+            </v-menu>
             <v-btn icon>
                 <v-icon color="grey">bookmark_border</v-icon>
             </v-btn>
