@@ -6,8 +6,8 @@
  */
 
 export default (store) => {
-  const loggedInUser = store.getters.user;
   return (to, from, next) => {
+    const loggedInUser = store.getters.user;
     if ((to.meta && to.meta.auth) && !loggedInUser) {
       next({
         path: '/login',
