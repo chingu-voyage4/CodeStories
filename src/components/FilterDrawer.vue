@@ -39,6 +39,7 @@
              <v-text-field
               placeholder="Start typing for suggestions!"
             ></v-text-field>
+            <v-btn block outline color="green">SORT & FILTER</v-btn>
  </v-container>
 </template>
 
