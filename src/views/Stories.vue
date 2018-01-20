@@ -5,10 +5,10 @@
         <h1>{{pageTitle}}</h1>
         <v-form>
           <v-layout row wrap>
-            <v-flex xs6>
-              <v-text-field v-model="searchText" placeholder="SEARCH BY TITLE, AUTHOR OR TAG"></v-text-field>
+            <v-flex>
+              <v-text-field v-model="searchText" placeholder="SEARCH BY TITLE, AUTHOR, TAG"></v-text-field>
             </v-flex>
-            <v-flex xs6>
+            <v-flex>
               <v-btn large @click="submit" class="btn-bg btn-style white--text">SEARCH</v-btn>
             </v-flex>
           </v-layout>
