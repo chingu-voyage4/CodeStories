@@ -25,7 +25,7 @@
          <v-flex text-xs-right>
            <a class="links pa-2" v-for='category in story_categories'>{{category}} </a>
            <v-btn icon @click.stop="drawer = !drawer">
-                <v-icon color="grey">fa-filter</v-icon>
+                <v-icon color="grey">filter_list</v-icon>
             </v-btn>
             <v-navigation-drawer
               temporary
