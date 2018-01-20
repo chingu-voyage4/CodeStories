@@ -14,7 +14,8 @@
                             <v-divider dark:true></v-divider>
                             <v-layout row mt-3 mb-4>
                                 <v-flex xs6  class="text-xs-left">
-                                    <span class="tags">tag1,tag2,tag3</span>
+                                    <!--<span class="tags">tag1,tag2,tag3</span>-->
+                                    <a class = "tags" href="#" v-for="tag in tags" :key="tag.id">{{tag}} </a>
                                 </v-flex>
                                 <v-flex xs6  class="text-xs-right date">
                                     {{date}}
