@@ -15,6 +15,17 @@
           </v-layout>
           </v-container>
         </v-form>
+        <!-- tags -->
+     </v-container>
+     <v-container>
+       <v-layout row  class="tags">
+         <v-flex>
+           TOP TAGS: INSPIRATION, ORIGIN STORY, LIFE
+         </v-flex>
+         <v-flex text-xs-right>
+           HOT NEWEST MOST VIEWED BOOKMARKED
+         </v-flex>
+       </v-layout>
      </v-container>
     <StoryGrid />
     <FooterBar></FooterBar>
@@ -41,6 +52,11 @@ export default {
     }
   },
   computed: mapGetters(["user"]),
+  methods: {
+    submit () {
+      alert('you clicked me! :P')
+    }
+  }
 }
 </script>
 
@@ -66,5 +82,8 @@ h3 {
 .btn-style {
   font-weight: bold;
   color: #395f5c;
+}
+.tags{
+  color: #757575;
 }
 </style>
