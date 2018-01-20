@@ -5,7 +5,7 @@
             <h3>Advanced Filter</h3>
         </v-list-tile>
       </v-list>
-      <v-list class="pt-0" dense>
+      <v-list class="pt-1" >
         <v-divider></v-divider>
         <v-list-tile v-for="item in items" :key="item.title" @click="">
           <v-list-tile-action>
