@@ -70,7 +70,7 @@
                             ></v-text-field>
                             <v-btn @click="submit" color="btn-bg" class="btn-style">Submit</v-btn>
                         </v-flex>
-                    </v-layout> 
+                    </v-layout>
                 </v-container>
             </div>
             <FooterBar></FooterBar>
@@ -93,7 +93,8 @@ export default {
       author: 'Author',
       date:'01 Jan 2018',
       kudosCount: 256,
-      userName: 'John Doe'
+      userName: 'John Doe',
+      tags: ['tag1', 'tag2', 'tag3']
     }
   }
 }
