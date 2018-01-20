@@ -48,7 +48,8 @@ export default {
   data () {
     return {
       pageTitle: 'Discover More Stories',
-      searchText: ''
+      searchText: '',
+      top_tags: ['Origin story', 'Inspiration', 'Life']
     }
   },
   computed: mapGetters(["user"]),
