@@ -4,14 +4,16 @@
      <v-container class="text-xs-center">
         <h1>{{pageTitle}}</h1>
         <v-form>
+          <v-container grid-list-xs>
           <v-layout row wrap>
-            <v-flex>
+            <v-flex xs12 sm10>
               <v-text-field v-model="searchText" placeholder="SEARCH BY TITLE, AUTHOR, TAG"></v-text-field>
             </v-flex>
-            <v-flex>
+            <v-flex sm2>
               <v-btn large @click="submit" class="btn-bg btn-style white--text">SEARCH</v-btn>
             </v-flex>
           </v-layout>
+          </v-container>
         </v-form>
      </v-container>
     <StoryGrid />
