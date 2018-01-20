@@ -36,10 +36,13 @@
           </v-expansion-panel>
           </v-flex>
         <h4 class="text-xs-left">Other tags: </h4>
-             <v-text-field
+        <v-text-field
               placeholder="Start typing for suggestions!"
-            ></v-text-field>
-            <v-btn block outline color="green">SORT & FILTER</v-btn>
+            >
+        </v-text-field>
+        <v-chip close v-for="tag in tags" :key="tag" outline color="green">{{tag}}</v-chip>
+
+        <v-btn block outline color="green">SORT & FILTER</v-btn>
  </v-container>
 </template>
 
@@ -53,7 +56,8 @@
           {text: 'Author'},
           {text: 'Title'},
           {text: 'Tag'}
-          ]
+          ],
+        tags: ['Motivation', 'Learning', 'Interview']
       }
     }
   };
