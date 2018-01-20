@@ -1,11 +1,15 @@
 import Test from '../components/Test/Test.vue';
-import Login from '../views/Login/Login.vue';
-import Home from '../views/Home.vue';
-import Signup from '../views/Signup/Signup.vue';
+
+/* Route level code split */
+const Home = () => import('../views/Home.vue');
+const Signup = () => import('../views/Signup/Signup.vue');
+const NewStory = () => import('../views/NewStory/NewStory.vue');
+const Login = () => import('../views/Login/Login.vue');
 
 /* Protected routes */
 const protectedRoutes = [
-  { path: '/test', component: Test, meta: { auth: true } }
+  { path: '/test', component: Test, meta: { auth: true } },
+  { path: '/new', component: NewStory, meta: { auth: true } }
 ];
 
 /* Public routes */
