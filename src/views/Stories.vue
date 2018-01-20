@@ -49,7 +49,8 @@ export default {
     return {
       pageTitle: 'Discover More Stories',
       searchText: '',
-      top_tags: ['Origin story', 'Inspiration', 'Life']
+      top_tags: ['Origin story', 'Inspiration', 'Life'],
+      story_categories: ['HOT', 'NEWEST', 'MOST', 'VIEWED', 'BOOKMARKED']
     }
   },
   computed: mapGetters(["user"]),
