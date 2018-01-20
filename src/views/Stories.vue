@@ -50,7 +50,7 @@ export default {
 }
 h1 {
   font-size: 40px;
-  padding-top: 153px;
+  padding-top: 100px;
   font-weight: bold;
   color: #757575;
 }
@@ -64,6 +64,5 @@ h3 {
 .btn-style {
   font-weight: bold;
   color: #395f5c;
-  margin-top: 50px;
 }
 </style>
