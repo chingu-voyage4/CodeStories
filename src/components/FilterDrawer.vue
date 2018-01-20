@@ -1,5 +1,5 @@
 <template>
- <v-app>
+ <v-container>
       <v-list class="pa-1">
         <v-list-tile>
             <h3>Advanced Filter</h3>
@@ -7,18 +7,23 @@
       </v-list>
       <v-list class="pt-1" >
         <v-divider></v-divider>
-        <v-list-tile>
-          <v-subheader v-text="'Sort by'"></v-subheader>
-          <v-select
+      </v-list>
+      <v-flex>
+      <h4 class="text-xs-left pt-2">Sort by: </h4>
+      </v-flex>
+      <v-flex>
+      <v-select
               v-bind:items="sortitems"
               v-model="sortby"
               label="Select"
               single-line
               bottom chips
             ></v-select>
-        </v-list-tile>
-        <v-list-tile>
-          <h5>Top Filters:</h5>
+      </v-flex>
+      <v-flex>
+      <h4 class="text-xs-left">Top Filters:</h4>
+      </v-flex>
+      <v-flex class="pt-3 pb-3">
           <v-expansion-panel expand>
             <v-expansion-panel-content>
               <div slot="header">Top Categories</div>
@@ -29,9 +34,12 @@
               <p>Checkboxes</p>
             </v-expansion-panel-content>
           </v-expansion-panel>
-        </v-list-tile>
-      </v-list>
- </v-app>
+          </v-flex>
+        <h4 class="text-xs-left">Other tags: </h4>
+             <v-text-field
+              placeholder="Start typing for suggestions!"
+            ></v-text-field>
+ </v-container>
 </template>
 
 <script>
