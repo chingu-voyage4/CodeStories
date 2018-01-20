@@ -20,10 +20,10 @@
      <v-container>
        <v-layout row  class="tags">
          <v-flex>
-           TOP TAGS: INSPIRATION, ORIGIN STORY, LIFE
+           TOP TAGS: <a class="links tag-links pa-1" v-for='top in top_tags'>{{top}} </a>
          </v-flex>
          <v-flex text-xs-right>
-           HOT NEWEST MOST VIEWED BOOKMARKED
+           <a class="links pa-2" v-for='category in story_categories'>{{category}} </a>
          </v-flex>
        </v-layout>
      </v-container>
