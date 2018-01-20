@@ -108,6 +108,7 @@ h1 {
 h3 {
   font-size: 22.5px;
   font-weight: normal;
+  color: #757575;
 }
 .btn-bg {
   background: #5fd48a !important;
