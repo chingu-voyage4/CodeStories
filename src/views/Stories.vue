@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <div class="content">
     <HeaderBar></HeaderBar>
      <v-container class="text-xs-center">
         <h1>{{pageTitle}}</h1>
@@ -40,7 +40,7 @@
      </v-container>
     <StoryGrid />
     <FooterBar></FooterBar>
-  </v-app>
+  </div>
 </template>
 
 <script>
