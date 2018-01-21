@@ -27,11 +27,21 @@
           <v-expansion-panel expand>
             <v-expansion-panel-content>
               <div slot="header">Top Categories</div>
-              <p>Checkboxes</p>
+              <v-container class="pr-4 pl-4">
+                <v-flex v-for="category in topCategories" :key="category.id">
+                  <input class="pa-2" type="checkbox" :id="category.value" :value="category.value" v-model="checkedCategories">
+                  <label class="pa-2" :for="category.value">{{category.value}} ({{category.count}})</label>
+                </v-flex>
+              </v-container>
             </v-expansion-panel-content>
             <v-expansion-panel-content>
               <div slot="header">Top Tags</div>
-              <p>Checkboxes</p>
+              <v-container class="pr-4 pl-4">
+                <v-flex v-for="tag in topTags" :key="tag.id">
+                  <input class="pa-2" type="checkbox" :id="tag.value" :value="tag.value" v-model="checkedTag">
+                  <label class="pa-2" :for="tag.value">{{tag.value}} ({{tag.count}})</label>
+                </v-flex>
+              </v-container>
             </v-expansion-panel-content>
           </v-expansion-panel>
           </v-flex>
@@ -55,9 +65,44 @@
         sortitems: [
           {text: 'Author'},
           {text: 'Title'},
-          {text: 'Tag'}
+          {text: 'Tag'},
+          {text: 'Time'}
           ],
-        tags: ['Motivation', 'Learning', 'Interview']
+        tags: ['Motivation', 'Learning', 'Interview'],
+        topCategories: [
+          {
+            value: 'Learning',
+            count: 500
+          },
+          {
+            value: 'Professional Life',
+            count: 250
+          },
+          {
+            value: 'Life',
+            count: 300
+          }
+        ],
+        checkedCategories: [],
+        topTags: [
+          {
+            value: 'Origin Story',
+            count: 500
+          },
+          {
+            value: 'Teamwork',
+            count: 250
+          },
+          {
+            value: 'Inspiration',
+            count: 300
+          },
+          {
+            value: 'Job Hunting',
+            count: 1000
+          }
+        ],
+        checkedTags: []
       }
     }
   };
