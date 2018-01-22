@@ -1,4 +1,5 @@
 <template>
+<router-link to="/storyPage">
       <v-card class="elevation-2">
         <v-card-media
           :src="story.image"
@@ -36,6 +37,7 @@
             </v-btn>
           </v-card-actions>
       </v-card>
+</router-link>
 </template>
 
 <script>
