@@ -13,6 +13,14 @@
         </router-link>
       </v-container>
     </div>
+    <div class="neg-margin-top">
+    <story-grid />
+    </div>
+    <v-flex class="text-xs-center mb-5">
+    <router-link to="/stories">
+        <v-btn color="btn-bg" large class="btn-style" depressed> DISCOVER MORE </v-btn>
+        </router-link>
+    </v-flex>
     <FooterBar></FooterBar>
   </div>
 </template>
@@ -21,11 +29,14 @@
 import { mapGetters } from "vuex";
 import HeaderBar from '../components/Header/Header.vue'
 import FooterBar from '../components/Footer.vue'
+import StoryGrid from '../components/StoryGrid.vue'
+
 export default {
   name: 'Home',
   components: {
     HeaderBar,
-    FooterBar
+    FooterBar,
+    StoryGrid
   },
   data () {
     return {
@@ -68,5 +79,8 @@ h3 {
   font-weight: bold;
   color: #395f5c;
   margin-top: 50px;
+}
+.neg-margin-top {
+  margin-top: -10%;
 }
 </style>
