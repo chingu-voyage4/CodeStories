@@ -4,7 +4,9 @@ import Test from '../components/Test/Test.vue';
 const Home = () => import('../views/Home.vue');
 const Signup = () => import('../views/Signup/Signup.vue');
 const NewStory = () => import('../views/NewStory/NewStory.vue');
+const Stories = () =>  import('../views/Stories.vue');
 const Login = () => import('../views/Login/Login.vue');
+const StoryPage = () => import('../views/Stories Page/storiesPage.vue');
 
 /* Protected routes */
 const protectedRoutes = [
@@ -17,6 +19,8 @@ const publicRoutes = [
   { path: '/', component: Home },
   { path: '/home', component: Home },
   { path: '/register', component: Signup },
+  { path: '/storyPage', component: StoryPage},
+  { path: '/stories', component: Stories },
   {
     path: '/login',
     component: Login,
