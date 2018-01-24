@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import 'firebase/storage';
 import config from '../config/firebaseConfig';
 
 /**
@@ -25,3 +26,4 @@ const getFirebaseIns = (fb, cf) => {
 // Export firebase database and auth instance
 export const db = getFirebaseIns(firebase, config).database();
 export const auth = getFirebaseIns(firebase, config).auth();
+export const storage = getFirebaseIns(firebase, config).storage();
