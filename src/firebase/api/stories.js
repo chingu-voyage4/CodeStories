@@ -1,4 +1,5 @@
-import { db } from '../';
+import slug from 'limax';
+import { db, auth } from '../';
 import StorySchema from '../../schema/story';
 import { getRandomKey } from '../../util';
 
@@ -9,14 +10,16 @@ export const createNewStory = newStory => {
   const ranKey = getRandomKey();
 
   // Create a url friendly slug from story title
-  const slug = ranKey;
+  // and append random key to make it unique
+  const storySlug = `${slug(newStory.title)}-${ranKey}`;
 
   const story = {
     ...StorySchema,
 
     // Overide default values with actual inputs
     storyUid,
-    slug,
+    slug: storySlug,
+    author: auth.currentUser.uid,
     ...newStory
   };
 

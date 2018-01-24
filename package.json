@@ -25,6 +25,7 @@
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase": "^4.8.1",
+    "limax": "^1.6.0",
     "lru-cache": "^4.1.1",
     "serve-favicon": "^2.4.5",
     "vue": "^2.5.3",
