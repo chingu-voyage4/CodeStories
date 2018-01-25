@@ -7,9 +7,9 @@
 ## Tech stack
 
 * Backend: Node
-* Database: Mongodb
+* Database and Auth: Firebase
 * Middleware Framework: Express
-* Frontend: Vue
+* Frontend: Vue, Vuetify
 
 ## Client User Stories
 
