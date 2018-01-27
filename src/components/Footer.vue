@@ -15,7 +15,7 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <div class="up-arrow">
+    <div class="up-arrow" @click="scrollToTop">
       <i class="material-icons">arrow_upward</i>
     </div>
   </v-footer>
@@ -33,6 +33,12 @@ export default {
               'repo'
           ]
       }
+  },
+  methods: {
+    scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
   }
 }
 </script>
