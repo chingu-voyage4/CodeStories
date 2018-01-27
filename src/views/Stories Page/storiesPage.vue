@@ -97,6 +97,11 @@ export default {
       userName: 'John Doe',
       tags: ['tag1', 'tag2', 'tag3']
     }
+  },
+  methods: {
+      submit () {
+          alert('Submit yet to be implemented!')
+      }
   }
 }
 </script>
