@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Signup from '../views/Signup/Signup.vue';
 import StoryPage from '../views/Stories Page/storiesPage.vue'
 import Stories from '../views/Stories.vue';
+import Profile from '../views/Profile.vue';
 
 /* Protected routes */
 const protectedRoutes = [
@@ -17,6 +18,7 @@ const publicRoutes = [
   { path: '/register', component: Signup },
   { path: '/storyPage', component: StoryPage},
   { path: '/stories', component: Stories },
+  { path: '/profile', component: Profile },
   {
     path: '/login',
     component: Login,
