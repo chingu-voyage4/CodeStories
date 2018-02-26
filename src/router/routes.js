@@ -6,7 +6,7 @@ const Signup = () => import('../views/Signup/Signup.vue');
 const NewStory = () => import('../views/NewStory/NewStory.vue');
 const Stories = () =>  import('../views/Stories.vue');
 const Login = () => import('../views/Login/Login.vue');
-const StoryPage = () => import('../views/Stories Page/storiesPage.vue');
+const SingleStory = () => import('../views/SingleStory/SingleStory.vue');
 
 /* Protected routes */
 const protectedRoutes = [
@@ -19,7 +19,6 @@ const publicRoutes = [
   { path: '/', component: Home },
   { path: '/home', component: Home },
   { path: '/register', component: Signup },
-  { path: '/storyPage', component: StoryPage},
   { path: '/stories', component: Stories },
   {
     path: '/login',
@@ -27,7 +26,15 @@ const publicRoutes = [
 
     // Spread route query as props
     props: (route) => ({ ...route.query })
-  }
+  },
+
+  // Since story slug will be appended random key, so it
+  // won't conflict with above routes
+  { path: '/:slug', component: SingleStory},
+
+  // For user profile, '@' will be prepended to username as medium.com
+  // does, so it won't conflict with other routes
+  // { path: '/@:username', component: Profile }
 ];
 
 export default [
