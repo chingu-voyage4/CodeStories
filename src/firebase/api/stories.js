@@ -3,7 +3,7 @@ import { db, auth } from '../';
 import StorySchema from '../../schema/story';
 import { getRandomKey } from '../../util';
 
-export const createNewStory = newStory => {
+export const createNewStory = async newStory => {
   // Get a story uid
   const storyUid = db.ref().child('stories').push().key;
 
@@ -24,5 +24,11 @@ export const createNewStory = newStory => {
   };
 
   // Update to database
-  return db.ref(`/stories/${storyUid}`).update(story);
+  await db.ref(`/stories/${storyUid}`).update(story);
+  return story;
+};
+
+export const getStoryBySlug = async slug => {
+  const stories = await db.ref().child("stories").once('value');
+  return stories.val() && Object.keys(stories.val()).map(s => stories.val()[s]).find(s => s.slug === slug);
 };
