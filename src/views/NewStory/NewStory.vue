@@ -13,6 +13,7 @@
                   type="text"
                   placeholder="Title"
                   required
+                  :disabled="loading"
                 ></v-text-field>
                 <Editor
                   :text="story"
@@ -36,6 +37,7 @@
                   multiple
                   autocomplete
                   max-height="400"
+                  :disabled="loading"
                 >
                   <template slot="selection" slot-scope="data">
                     <v-chip
@@ -55,6 +57,7 @@
                   tags
                   chips
                   max-height="400"
+                  :disabled="loading"
                 >
                   <template slot="selection" slot-scope="data">
                     <v-chip
@@ -71,14 +74,15 @@
                   </v-card-media>
                 </v-card>
                 <input type="file" id="upload_photo" @change="handleUploadCoverPhoto" style="visibility: hidden"/>
-                <v-btn color="secondary" block raised @click="triggerUploadPhoto">
+                <v-btn color="secondary" block raised @click="triggerUploadPhoto" :disabled="loading">
                   <v-icon>cloud_upload</v-icon> &nbsp;Upload a cover photo
                 </v-btn>
-                <v-btn color="info" block raised>
+                <v-btn color="info" block raised :disabled="loading">
                   <v-icon>save</v-icon> &nbsp;Save as draft
                 </v-btn>
-                <v-btn type="submit" color="success" block raised>
-                  <v-icon>send</v-icon> &nbsp;Publish
+                <v-btn type="submit" color="success" block raised :disabled="loading">
+                  <v-progress-circular indeterminate v-if="loading"></v-progress-circular>
+                  <v-icon v-if="!loading">send</v-icon> &nbsp;Publish
                 </v-btn>
               </v-container>
             </v-card>
