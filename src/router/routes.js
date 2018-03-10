@@ -1,5 +1,3 @@
-import Test from '../components/Test/Test.vue';
-
 /* Route level code split */
 const Home = () => import('../views/Home.vue');
 const Signup = () => import('../views/Signup/Signup.vue');
@@ -10,7 +8,6 @@ const SingleStory = () => import('../views/SingleStory/SingleStory.vue');
 
 /* Protected routes */
 const protectedRoutes = [
-  { path: '/test', component: Test, meta: { auth: true } },
   { path: '/new', component: NewStory, meta: { auth: true } }
 ];
 
