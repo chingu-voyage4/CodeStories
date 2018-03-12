@@ -8,7 +8,8 @@ const SingleStory = () => import('../views/SingleStory/SingleStory.vue');
 
 /* Protected routes */
 const protectedRoutes = [
-  { path: '/new', component: AddEditStory, meta: { auth: true } }
+  { path: '/new', component: AddEditStory, meta: { auth: true } },
+  { path: '/edit/:slug', component: AddEditStory, meta: { auth: true } }
 ];
 
 /* Public routes */

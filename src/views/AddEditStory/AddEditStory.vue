@@ -70,8 +70,8 @@
                     > {{ data.item }} </v-chip>
                   </template>
                 </v-select>
-                <v-card v-if="story.coverPhotoURL">
-                  <v-card-media :src="story.coverPhotoURL" height="200px">
+                <v-card v-if="story.coverPhotoUrl">
+                  <v-card-media :src="story.coverPhotoUrl" height="200px">
                   </v-card-media>
                 </v-card>
                 <input type="file" id="upload_photo" @change="handleUploadCoverPhoto" style="visibility: hidden"/>

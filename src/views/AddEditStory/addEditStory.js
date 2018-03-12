@@ -6,7 +6,9 @@ import {
   GET_STORY,
   MUTATE_STORY,
   STORY_PUBLISH,
-  STORY_SAVE
+  STORY_SAVE,
+  FETCH_STORY,
+  FETCH_STORY_COVERPHOTO
 } from './addEditStory.type';
 
 export default {
@@ -19,6 +21,13 @@ export default {
   data () {
     return {};
   },
+  mounted () {
+    // Check if cover photo path is available,
+    // It is available when published story is on edit.
+    if (this.story.coverPhotoPath) {
+      this.$store.dispatch(FETCH_STORY_COVERPHOTO, this.story.coverPhotoPath);
+    }
+  },
   methods: {
     async handleStoryPublish () {
       const { commit, dispatch } = this.$store;
@@ -27,14 +36,14 @@ export default {
         story,
         category,
         tag,
-        coverPhotoURL
+        coverPhotoUrl
       } = this.story;
 
       // Check empty
       if (
         !storyTitle ||
         !story ||
-        !coverPhotoURL ||
+        !coverPhotoUrl ||
         !category.selected.length ||
         !tag.selected.length
       ) return;
@@ -52,7 +61,7 @@ export default {
         // Reset fields
         commit(MUTATE_STORY, { key: 'story', val: '' });
         commit(MUTATE_STORY, { key: 'storyTitle', val: '' });
-        commit(MUTATE_STORY, { key: 'coverPhotoURL', val: '' });
+        commit(MUTATE_STORY, { key: 'coverPhotoUrl', val: '' });
         commit(MUTATE_STORY, { key: 'category', val: { options: [], selected: [] } });
         commit(MUTATE_STORY, { key: 'tag', val: { options: [], selected: [] } });
 
@@ -103,7 +112,7 @@ export default {
       const file = e.target.files[0];
       try {
         const photoUrl = await getImageDataURL(file);
-        this.$store.commit(MUTATE_STORY, { key: 'coverPhotoURL', val: photoUrl });
+        this.$store.commit(MUTATE_STORY, { key: 'coverPhotoUrl', val: photoUrl });
       } catch (err) {
         console.error(err);
       }
@@ -114,5 +123,14 @@ export default {
       // Trigger click
       fileInput.click();
     }
+  },
+  asyncData ({ route, store }) {
+    // Check if there is slug in route params to indentify
+    // current route as for edit.
+    const isEdit = Object.keys(route.params).includes('slug');
+    if (isEdit) {
+      return store.dispatch(FETCH_STORY, route.params.slug);
+    }
+    return Promise.resolve(true);
   }
 };

@@ -3,3 +3,5 @@ export const MUTATE_STORY = "MUTATE_STORY";
 export const INIT_STORY = "INIT_STORY";
 export const STORY_SAVE = "STORY_SAVE";
 export const STORY_PUBLISH = "STORY_PUBLISH";
+export const FETCH_STORY = "FETCH_STORY";
+export const FETCH_STORY_COVERPHOTO = "FETCH_STORY_COVERPHOTO";

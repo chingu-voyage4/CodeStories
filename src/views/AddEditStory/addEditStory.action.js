@@ -1,14 +1,18 @@
 import slug from 'limax';
 import { auth } from '../../firebase';
 import StorySchema from '../../schema/story';
-import { uploadCoverPhoto } from '../../firebase/api/storage';
-import { createNewStory } from '../../firebase/api/stories';
+import { uploadCoverPhoto, getCoverPhotoUrl } from '../../firebase/api/storage';
+import { createNewStory, getStoryBySlug } from '../../firebase/api/stories';
 import { saveDraftStory } from '../../firebase/api/draftStories';
 import { getRandomKey } from '../../util';
 
 import {
   STORY_PUBLISH,
-  STORY_SAVE
+  STORY_SAVE,
+  FETCH_STORY,
+  INIT_STORY,
+  FETCH_STORY_COVERPHOTO,
+  MUTATE_STORY
 } from './addEditStory.type';
 
 export default {
@@ -18,11 +22,11 @@ export default {
       story,
       category,
       tag,
-      coverPhotoURL,
+      coverPhotoUrl,
       publishAt,
       storyUid
     } = s;
-    const response = await uploadCoverPhoto(coverPhotoURL);
+    const response = await uploadCoverPhoto(coverPhotoUrl);
     const coverPhotoPath = response.ref.location.path_;
 
     const ranKey = getRandomKey();
@@ -58,12 +62,12 @@ export default {
       story,
       category,
       tag,
-      coverPhotoURL,
+      coverPhotoUrl,
       storyUid
     } = s;
 
     // Upload cover photo if it exits
-    const response = coverPhotoURL ? await uploadCoverPhoto(coverPhotoURL) : null;
+    const response = coverPhotoUrl ? await uploadCoverPhoto(coverPhotoUrl) : null;
     const _story = {
       ...StorySchema,
       storyTitle,
@@ -76,5 +80,17 @@ export default {
     };
 
     return saveDraftStory(_story);
+  },
+  [FETCH_STORY]: async (store, _slug) => {
+    const story = await getStoryBySlug(_slug);
+
+    // Format category and tag as UI needs
+    const category = { options: story.category, selected: story.category };
+    const tag = { options: story.tag, selected: story.tag };
+    store.commit(INIT_STORY, { ...story, category, tag });
+  },
+  [FETCH_STORY_COVERPHOTO]: async ({ commit }, coverPhotoPath) => {
+    const coverPhotoUrl = await getCoverPhotoUrl(coverPhotoPath);
+    commit(MUTATE_STORY, { key: 'coverPhotoUrl', val: coverPhotoUrl });
   }
 };
