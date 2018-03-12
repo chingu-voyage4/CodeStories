@@ -4,6 +4,7 @@ import actions from './actions';
 import mutations from './mutations';
 import getters from './getters';
 import singleStory from '../views/SingleStory/singleStory.module';
+import story from '../views/AddEditStory/addEditStory.module';
 
 Vue.use(Vuex);
 
@@ -14,7 +15,8 @@ export function createStore () {
       user: null
     },
     modules: {
-      singleStory
+      singleStory,
+      story
     },
     actions,
     mutations,

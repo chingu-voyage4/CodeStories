@@ -9,15 +9,16 @@
             <v-card>
               <v-container>
                 <v-text-field
-                  v-model="storyTitle"
+                  :value="story.storyTitle"
                   type="text"
                   placeholder="Title"
+                  @input="v => { handleChange('storyTitle', v) }"
                   required
-                  :disabled="loading"
+                  :disabled="story.storyPublishLoading || story.storySaveLoading"
                 ></v-text-field>
                 <Editor
-                  :text="story"
-                  :options="editor.options"
+                  :text="story.story"
+                  :options="story.editor.options"
                   @edit="handleStoryWrite"
                   class="story-editor"
                 ></Editor>
@@ -30,14 +31,14 @@
               <v-container>
                 <v-select
                   label="Category"
-                  :items="category.options"
-                  v-model="category.selected"
+                  :items="story.category.options"
+                  v-model="story.category.selected"
                   tags
                   chips
                   multiple
                   autocomplete
                   max-height="400"
-                  :disabled="loading"
+                  :disabled="story.storyPublishLoading || story.storySaveLoading"
                 >
                   <template slot="selection" slot-scope="data">
                     <v-chip
@@ -51,13 +52,13 @@
                 </v-select>
                 <v-select
                   label="Tags"
-                  :items="tag.options"
-                  v-model="tag.selected"
+                  :items="story.tag.options"
+                  v-model="story.tag.selected"
                   multiple
                   tags
                   chips
                   max-height="400"
-                  :disabled="loading"
+                  :disabled="story.storyPublishLoading || story.storySaveLoading"
                 >
                   <template slot="selection" slot-scope="data">
                     <v-chip
@@ -69,20 +70,21 @@
                     > {{ data.item }} </v-chip>
                   </template>
                 </v-select>
-                <v-card v-if="coverPhotoURL">
-                  <v-card-media :src="coverPhotoURL" height="200px">
+                <v-card v-if="story.coverPhotoURL">
+                  <v-card-media :src="story.coverPhotoURL" height="200px">
                   </v-card-media>
                 </v-card>
                 <input type="file" id="upload_photo" @change="handleUploadCoverPhoto" style="visibility: hidden"/>
-                <v-btn color="secondary" block raised @click="triggerUploadPhoto" :disabled="loading">
+                <v-btn color="secondary" block raised @click="triggerUploadPhoto" :disabled="story.storyPublishLoading || story.storySaveLoading">
                   <v-icon>cloud_upload</v-icon> &nbsp;Upload a cover photo
                 </v-btn>
-                <v-btn color="info" block raised :disabled="loading">
-                  <v-icon>save</v-icon> &nbsp;Save as draft
+                <v-btn color="info" block raised :disabled="story.storyPublishLoading || story.storySaveLoading" @click="handleStorySave">
+                  <v-progress-circular indeterminate v-if="story.storySaveLoading"></v-progress-circular>
+                  <v-icon v-if="!story.storySaveLoading">save</v-icon> &nbsp;Save as draft
                 </v-btn>
-                <v-btn type="submit" color="success" block raised :disabled="loading">
-                  <v-progress-circular indeterminate v-if="loading"></v-progress-circular>
-                  <v-icon v-if="!loading">send</v-icon> &nbsp;Publish
+                <v-btn type="submit" color="success" block raised :disabled="story.storyPublishLoading || story.storySaveLoading">
+                  <v-progress-circular indeterminate v-if="story.storyPublishLoading"></v-progress-circular>
+                  <v-icon v-if="!story.storyPublishLoading">send</v-icon> &nbsp;Publish
                 </v-btn>
               </v-container>
             </v-card>
@@ -93,7 +95,7 @@
   </div>
 </template>
 
-<script src="./newStory.js"></script>
+<script src="./addEditStory.js"></script>
 <style lang="stylus">
-  @import './newStory.styl';
+  @import './addEditStory.styl';
 </style>

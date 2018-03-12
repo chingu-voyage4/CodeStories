@@ -1,14 +1,14 @@
 /* Route level code split */
 const Home = () => import('../views/Home.vue');
 const Signup = () => import('../views/Signup/Signup.vue');
-const NewStory = () => import('../views/NewStory/NewStory.vue');
+const AddEditStory = () => import('../views/AddEditStory/AddEditStory.vue');
 const Stories = () =>  import('../views/Stories.vue');
 const Login = () => import('../views/Login/Login.vue');
 const SingleStory = () => import('../views/SingleStory/SingleStory.vue');
 
 /* Protected routes */
 const protectedRoutes = [
-  { path: '/new', component: NewStory, meta: { auth: true } }
+  { path: '/new', component: AddEditStory, meta: { auth: true } }
 ];
 
 /* Public routes */

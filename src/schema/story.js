@@ -2,16 +2,14 @@
 
 export default {
   storyUid: "",
-  title: "",
+  storyTitle: "",
   coverPhotoPath: "",
   story: "",
   createdAt: null,
   publishAt: null,
   author: null,
-  isDraft: true,
-  isNew: true,
-  categories: [],
-  tags: [],
+  category: [],
+  tag: [],
   hearts: [],
   slug: ""
 };
