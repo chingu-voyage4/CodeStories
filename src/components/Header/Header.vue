@@ -34,11 +34,9 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-toolbar-title v-if="user">
-          <router-link :to="getStoryEditPath()" v-if="singleStory.storyUid">
-            <v-btn class="buttons" flat small>
-              <v-icon>edit</v-icon> &nbsp;Edit
-            </v-btn>
-          </router-link>
+          <v-btn class="buttons" @click="handleEdit" flat small v-if="singleStory.onSinglePage">
+            <v-icon>edit</v-icon> &nbsp;Edit
+          </v-btn>
           <router-link to="/new">
             <v-btn class="buttons" flat small>
               <v-icon>message</v-icon> &nbsp;New story
@@ -91,6 +89,11 @@ export default {
     },
     getStoryEditPath () {
       return `/edit/${this.singleStory.slug}`;
+    },
+    handleEdit () {
+      // Change flag so that edit button won't be shown on other route/page.
+      this.$store.commit('MUTATE_SINGLE_STORY', { key: 'onSinglePage', val: false });
+      this.goTo(this.getStoryEditPath());
     }
   }
 };

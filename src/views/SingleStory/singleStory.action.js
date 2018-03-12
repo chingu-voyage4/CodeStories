@@ -20,7 +20,7 @@ export default {
     // So, we will fetch story cover photo in client side
     const publishAt = moment(story.publishAt).format('DD MMM YYYY');
 
-    commit(INIT_SINGLE_STORY, { ...story, author, publishAt });
+    commit(INIT_SINGLE_STORY, { ...story, author, publishAt, onSinglePage: true });
   },
   [FETCH_SINGLE_STORY_COVERPHOTO]: async ({ commit }, coverPhotoPath) => {
     const coverPhotoUrl = await getCoverPhotoUrl(coverPhotoPath);
