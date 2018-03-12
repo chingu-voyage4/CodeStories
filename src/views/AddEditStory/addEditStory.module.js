@@ -14,7 +14,7 @@ export default {
       publishAt: null,
       storyTitle: "",
       story: "",
-      coverPhotoURL: "",
+      coverPhotoUrl: "",
       category: {
         options: [],
         selected: []
