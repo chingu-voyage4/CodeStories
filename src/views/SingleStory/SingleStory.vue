@@ -22,9 +22,7 @@
                                     {{story.publishAt}}
                                 </v-flex>
                             </v-layout>
-                            <p class="text-xs-justify" v-html="story.story">
-
-                            </p>
+                            <div class="text-xs-justify" v-html="story.story"></div>
                         </v-flex>
                     </v-layout>
                     <v-layout row>
@@ -78,7 +76,12 @@
 import HeaderBar from '../../components/Header/Header.vue'
 import FooterBar from '../../components/Footer.vue'
 import { mapGetters } from 'vuex';
-import { FETCH_SINGLE_STORY, GET_SINGLE_STORY } from './singleStory.type';
+import {
+  FETCH_SINGLE_STORY,
+  GET_SINGLE_STORY,
+  MUTATE_SINGLE_STORY,
+  FETCH_SINGLE_STORY_COVERPHOTO
+} from './singleStory.type';
 
 export default {
   name: 'SingleStory',
@@ -89,6 +92,9 @@ export default {
   computed: mapGetters({ story: GET_SINGLE_STORY }),
   data () {
     return {};
+  },
+  mounted () {
+    this.$store.dispatch(FETCH_SINGLE_STORY_COVERPHOTO, this.story.coverPhotoPath);
   },
   async asyncData ({ route, store }) {
     const { slug } = route.params;

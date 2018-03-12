@@ -1,8 +1,11 @@
-import { MUTATE_SINGLE_STORY } from './singleStory.type';
+import { INIT_SINGLE_STORY, MUTATE_SINGLE_STORY } from './singleStory.type';
 
 export default {
-  [MUTATE_SINGLE_STORY]: (state, story) => {
+  [INIT_SINGLE_STORY]: (state, story) => {
     const singleStory = { ...state.singleStory, ...story };
     state.singleStory = singleStory;
+  },
+  [MUTATE_SINGLE_STORY]: (state, { key, val }) => {
+    state.singleStory[key] = val;
   }
 }
