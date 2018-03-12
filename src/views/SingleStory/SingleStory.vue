@@ -7,7 +7,7 @@
             </div>
             <v-container class="text-xs-center">
                 <v-container>
-                    <h1>{{story.title}}</h1>
+                    <h1>{{story.storyTitle}}</h1>
                     <h3>{{story.author.name}}</h3>
                     <v-layout row>
                         <v-flex md2></v-flex>
