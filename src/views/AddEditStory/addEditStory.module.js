@@ -15,6 +15,7 @@ export default {
       storyTitle: "",
       story: "",
       coverPhotoUrl: "",
+      coverPhotoPath: "",
       category: {
         options: [],
         selected: []

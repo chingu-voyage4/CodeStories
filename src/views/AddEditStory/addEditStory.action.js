@@ -1,7 +1,7 @@
 import slug from 'limax';
 import { auth } from '../../firebase';
 import StorySchema from '../../schema/story';
-import { uploadCoverPhoto, getCoverPhotoUrl } from '../../firebase/api/storage';
+import { getCoverPhotoUrl, getCoverPhotoPath } from '../../firebase/api/storage';
 import { createNewStory, getStoryBySlug } from '../../firebase/api/stories';
 import { saveDraftStory } from '../../firebase/api/draftStories';
 import { getRandomKey } from '../../util';
@@ -23,13 +23,14 @@ export default {
       category,
       tag,
       coverPhotoUrl,
+      coverPhotoPath,
       publishAt,
       storyUid
     } = s;
-    const response = await uploadCoverPhoto(coverPhotoUrl);
-    const coverPhotoPath = response.ref.location.path_;
 
     const ranKey = getRandomKey();
+    const _coverPhotoPath = await getCoverPhotoPath(coverPhotoPath, coverPhotoUrl);
+
     // Create a url friendly slug from story title
     // and append random key to make it unique
     const storySlug = `${slug(storyTitle)}-${ranKey}`;
@@ -44,7 +45,7 @@ export default {
       author: auth.currentUser.uid,
       category,
       tag,
-      coverPhotoPath,
+      coverPhotoPath: _coverPhotoPath,
       slug: storySlug,
       publishAt: publishAt || Date.now()
     };
@@ -63,11 +64,11 @@ export default {
       category,
       tag,
       coverPhotoUrl,
+      coverPhotoPath,
       storyUid
     } = s;
 
-    // Upload cover photo if it exits
-    const response = coverPhotoUrl ? await uploadCoverPhoto(coverPhotoUrl) : null;
+    const _coverPhotoPath = await getCoverPhotoPath(coverPhotoPath, coverPhotoUrl);
     const _story = {
       ...StorySchema,
       storyTitle,
@@ -76,7 +77,7 @@ export default {
       category,
       tag,
       storyUid,
-      coverPhotoPath: response ? response.ref.location.path_ : ''
+      coverPhotoPath: _coverPhotoPath
     };
 
     return saveDraftStory(_story);

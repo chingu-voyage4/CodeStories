@@ -93,6 +93,7 @@ export default {
         commit(MUTATE_STORY, { key: 'storySaveLoading', val: false });
         // Save storyUid so that same story will be updated on save later.
         commit(MUTATE_STORY, { key: 'storyUid', val: savedStory.storyUid });
+        commit(MUTATE_STORY, { key: 'coverPhotoPath', val: savedStory.coverPhotoPath });
       } catch (e) {
         console.error(e);
         commit(MUTATE_STORY, { key: 'storySaveLoading', val: false });
