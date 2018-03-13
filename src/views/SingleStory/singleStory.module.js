@@ -11,7 +11,8 @@ export default {
       author: null,
       categories: [],
       tags: [],
-      hearts: []
+      hearts: [],
+      onSinglePage: false
     }
   },
   actions: { ...actions },
