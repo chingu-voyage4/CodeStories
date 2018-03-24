@@ -3,6 +3,7 @@ const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-
 const vueConfig = require('./vue-loader.config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -58,9 +59,7 @@ module.exports = {
   },
   plugins: isProd
     ? [
-      new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false }
-      }),
+      new UglifyJsPlugin(),
       new webpack.optimize.ModuleConcatenationPlugin(),
       new ExtractTextPlugin({
         filename: 'common.[chunkhash].css'
