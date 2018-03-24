@@ -5,5 +5,8 @@ export default {
   authDomain: "codestories-30fa1.firebaseapp.com",
 
   // Firebase database url
-  databaseURL: "https://codestories-30fa1.firebaseio.com"
+  databaseURL: "https://codestories-30fa1.firebaseio.com",
+
+  // Firebase storage
+  storageBucket: "codestories-30fa1.appspot.com"
 };

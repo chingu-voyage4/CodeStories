@@ -34,9 +34,12 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-toolbar-title v-if="user">
+          <v-btn class="buttons" @click="handleEdit" flat small v-if="singleStory.onSinglePage">
+            <v-icon>edit</v-icon> &nbsp;Edit
+          </v-btn>
           <router-link to="/new">
-            <v-btn class="buttons" flat large left>
-              <v-icon>message</v-icon> New post
+            <v-btn class="buttons" flat small>
+              <v-icon>message</v-icon> &nbsp;New story
             </v-btn>
           </router-link>
           <v-menu bottom left offset-y>
@@ -51,10 +54,10 @@
         </v-toolbar-title>
         <div v-else>
           <router-link to="/login">
-            <v-btn class="buttons" flat large left>Login</v-btn>
+            <v-btn class="buttons" flat small>Login</v-btn>
           </router-link>
           <router-link to="/register">
-            <v-btn class="buttons" flat large left>Join</v-btn>
+            <v-btn class="buttons" flat small>Join</v-btn>
           </router-link>
         </div>
         </v-toolbar-items>
@@ -75,10 +78,22 @@ export default {
   components: {
     UserMenu
   },
-  computed: mapGetters(["user"]),
+  computed: mapGetters({
+    user: 'user',
+    singleStory: 'GET_SINGLE_STORY'
+  }),
+
   methods: {
     goTo (routePath) {
       this.$router.push(routePath);
+    },
+    getStoryEditPath () {
+      return `/edit/${this.singleStory.slug}`;
+    },
+    handleEdit () {
+      // Change flag so that edit button won't be shown on other route/page.
+      this.$store.commit('MUTATE_SINGLE_STORY', { key: 'onSinglePage', val: false });
+      this.goTo(this.getStoryEditPath());
     }
   }
 };

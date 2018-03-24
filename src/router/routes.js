@@ -1,13 +1,15 @@
-import Test from '../components/Test/Test.vue';
-import Login from '../views/Login/Login.vue';
-import Home from '../views/Home.vue';
-import Signup from '../views/Signup/Signup.vue';
-import StoryPage from '../views/Stories Page/storiesPage.vue'
-import Stories from '../views/Stories.vue';
+/* Route level code split */
+const Home = () => import('../views/Home.vue');
+const Signup = () => import('../views/Signup/Signup.vue');
+const AddEditStory = () => import('../views/AddEditStory/AddEditStory.vue');
+const Stories = () =>  import('../views/Stories.vue');
+const Login = () => import('../views/Login/Login.vue');
+const SingleStory = () => import('../views/SingleStory/SingleStory.vue');
 
 /* Protected routes */
 const protectedRoutes = [
-  { path: '/test', component: Test, meta: { auth: true } }
+  { path: '/new', component: AddEditStory, meta: { auth: true } },
+  { path: '/edit/:slug', component: AddEditStory, meta: { auth: true } }
 ];
 
 /* Public routes */
@@ -15,7 +17,6 @@ const publicRoutes = [
   { path: '/', component: Home },
   { path: '/home', component: Home },
   { path: '/register', component: Signup },
-  { path: '/storyPage', component: StoryPage},
   { path: '/stories', component: Stories },
   {
     path: '/login',
@@ -23,7 +24,15 @@ const publicRoutes = [
 
     // Spread route query as props
     props: (route) => ({ ...route.query })
-  }
+  },
+
+  // Since story slug will be appended random key, so it
+  // won't conflict with above routes
+  { path: '/:slug', component: SingleStory},
+
+  // For user profile, '@' will be prepended to username as medium.com
+  // does, so it won't conflict with other routes
+  // { path: '/@:username', component: Profile }
 ];
 
 export default [
