@@ -25,11 +25,24 @@
     <v-toolbar prominent app color="header-bg" class="header-content" height="75px">
       <!-- The menu button -->
       <v-toolbar-side-icon light class="hidden-md-and-up buttons" @click.stop="drawer = !drawer"></v-toolbar-side-icon>      
-      <v-toolbar-title>Discover Stories</v-toolbar-title>
-      <v-spacer></v-spacer>      
-      <v-avatar size="125px" class="hidden-sm-and-down">
-        <img class='logo' src="~public/images/CHINGU_LOGO-04.png" alt="CodeStories logo" align="middle" />
-      </v-avatar>
+      <v-toolbar-title class="hidden-sm-and-down">
+        <v-btn flat to="/stories" style="background-color:transparent" large class="buttons"
+          Discover Stories
+        </v-btn>
+      </v-toolbar-title>
+      <v-toolbar-title class="hidden-md-and-up">
+        <v-btn flat to="/" style="color:transparent">
+          <img class="logo" src="~public/images/CHINGU_LOGO-07_crop.png" alt="CodeStories logo" align="middle" />
+        </v-btn>
+      </v-toolbar-title>
+      <v-spacer></v-spacer> 
+      <router-link to="/">     
+        <v-btn icon>
+          <v-avatar size="125px" class="hidden-sm-and-down">
+            <img src="~public/images/CHINGU_LOGO-04.png" alt="CodeStories logo" align="middle" />
+          </v-avatar>
+        </v-btn>
+      </router-link>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down" v-if="user">
         <v-btn class="buttons" @click="handleEdit" flat v-if="singleStory.onSinglePage">
@@ -101,7 +114,7 @@ export default {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .logo {
-  margin-top: 75px;
+  height: 50px;
 }
 .buttons {
   color: #5fd48a !important;
