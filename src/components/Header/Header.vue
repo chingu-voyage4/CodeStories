@@ -26,7 +26,7 @@
       <!-- The menu button -->
       <v-toolbar-side-icon light class="hidden-md-and-up buttons" @click.stop="drawer = !drawer"></v-toolbar-side-icon>      
       <v-toolbar-title class="hidden-sm-and-down">
-        <v-btn flat to="/stories" style="background-color:transparent" large class="buttons"
+        <v-btn flat to="/stories" style="background-color:transparent" large class="buttons">
           Discover Stories
         </v-btn>
       </v-toolbar-title>
