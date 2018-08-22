@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="footer-bg" app height="auto">
+  <v-footer color="footer-bg" height="auto">
         <img src="~public/images/CHINGU_LOGO-07_crop.png" class="footer-logo" />
         <v-spacer></v-spacer>
         <v-btn
