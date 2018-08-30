@@ -1,23 +1,19 @@
 <template>
-  <v-footer color="footer-bg" app>
-    <v-container>
-      <v-layout row>
-        <v-flex sm2>
-          <v-avatar :tile='true'>
-            <img src="~public/images/CHINGU_LOGO-07_crop.png" class="footer-logo" />
-          </v-avatar>
-        </v-flex>
-        <!-- <v-spacer></v-spacer> -->
-        <v-flex sm2 v-for='links in footerLinks' :key="links">
-          <div class="footer-link text-md-center">
-            <a href="#">{{links}}</a>
-          </div>
-        </v-flex>
-      </v-layout>
-    </v-container>
-    <div class="up-arrow" @click="scrollToTop">
-      <i class="material-icons">arrow_upward</i>
-    </div>
+  <v-footer color="footer-bg" height="auto">
+        <img src="~public/images/CHINGU_LOGO-07_crop.png" class="footer-logo" />
+        <v-spacer></v-spacer>
+        <v-btn
+          v-for="link in footerLinks"
+          :key="link"
+          flat
+          class="footer-link"
+        >
+          {{link}}
+        </v-btn>
+        <v-spacer></v-spacer>
+    <v-btn flat class="up-arrow" @click="$vuetify.goTo(0)">
+      <v-icon>arrow_upward</v-icon>
+    </v-btn>
   </v-footer>
 </template>
 
@@ -33,12 +29,6 @@ export default {
               'repo'
           ]
       }
-  },
-  methods: {
-    scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
   }
 }
 </script>
@@ -54,18 +44,30 @@ export default {
   color: #fff;
   text-align: center;
   padding: 25px;
+  margin: 0;
 }
 .footer-logo {
-  width: auto;
+  height: 50px;
+  padding-left: 10px;
 }
-.footer-link a {
+.footer-link{
   color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: Arial;
+  font-weight: 400;
 }
-.footer > :last-child {
-  margin-right: 0;
+@media only screen and (max-width: 675px) {
+  .footer-link{
+    font-size: 1rem;
+    margin: 0;
+    min-width: auto;
+    padding: 0 5px;
+  }
+  .footer-logo{
+    height: 30px;
+  }
+  .up-arrow{
+    height: 50px;
+    padding: 10px;
+  }
 }
 </style>
 
